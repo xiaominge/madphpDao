@@ -1,5 +1,5 @@
 {
-    "name": "madphpDao",
+    "name": "madphp/dao",
     "description": "Madphp Dao.",
     "keywords": ["framework", "madphp", "php"],
     "license": "MIT",
@@ -17,7 +17,7 @@
 
     "autoload": {
         "psr-4": {
-            "Madphp\\": "src/"
+            "MadphpDao\\": "src/"
         }
     },
 
