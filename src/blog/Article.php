@@ -14,6 +14,8 @@ class Article extends Base
 
     public static function getAll()
     {
-    	return self::getDb()->fetchAll(Sql\Article::getList, self::$defaultSqlMap);
+        $r = self::getDb()->setIsWrite()->fetchAll(Sql\Article::getList, self::$defaultSqlMap);
+        return $r;
     }
+
 }

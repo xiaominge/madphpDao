@@ -1,7 +1,7 @@
 <?php
 
 namespace MadphpDao\Blog;
-use \Madphp\Db as DB;
+use Madphp\Db;
 
 /**
 * Base Model
@@ -16,9 +16,10 @@ class Base
     protected static function getDb()
     {
         if (self::$db === null) {
-            self::$db = \DB::pdo(self::$dbname);
+            self::$db = DB::pdo(self::$dbname);
             self::$db->setFetchStyle(\PDO::FETCH_CLASS);
         }
+
 		return self::$db;
     }
 
