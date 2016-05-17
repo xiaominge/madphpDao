@@ -16,8 +16,8 @@ class Base
     protected static function getDb()
     {
         if (self::$db === null) {
-            self::$db = \DB::pdo(self::$dbname);
-            self::$db->setFetchStyle(\PDO::FETCH_CLASS);
+            self::$db = DB::pdo(self::$dbname);
+            self::$db->setDebug(false)->setFetchStyle(\PDO::FETCH_CLASS);
         }
 		return self::$db;
     }
