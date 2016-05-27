@@ -3,18 +3,18 @@
 namespace MadphpDao\Blog;
 
 /**
-* Article Model
-*/
+ * Article Model
+ */
 
 class Article extends Base
 {
-    const table = 'l_articles';
-    
-    public static $defaultSqlMap = array('table' => self::table);
+    const tableName = 'l_articles';
 
-    public static function getAll()
+    public static $defaultSqlMap = array('table' => 'l_articles');
+
+    public function getAll()
     {
-        $r = self::getDb()->setIsWrite()->fetchAll(Sql\Article::getList, self::$defaultSqlMap);
+        $r = $this->getDb()->setIsWrite()->fetchAll(Sql\Article::getList, self::$defaultSqlMap);
         return $r;
     }
 

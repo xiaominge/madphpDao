@@ -3,17 +3,17 @@
 namespace MadphpDao\Rbac;
 
 /**
-* Auth Model
-*/
+ * Auth Model
+ */
 
 class Auth extends Base
 {
-    const table = 'rbac_auth';
-    
-    public static $defaultSqlMap = array('table' => self::table);
+    const tableName = 'rbac_auth';
 
-    public static function getAll()
+    public static $defaultSqlMap = array('table' => 'rbac_auth');
+
+    public function getAll()
     {
-    	return self::getDb()->fetchAll(Sql\Auth::getList, self::$defaultSqlMap);
+        return $this->getDb()->fetchAll(Sql\Auth::getList, self::$defaultSqlMap);
     }
 }

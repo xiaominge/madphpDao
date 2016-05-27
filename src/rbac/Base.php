@@ -1,25 +1,17 @@
 <?php
 
 namespace MadphpDao\Rbac;
-use \Madphp\Db as DB;
+
+use MadphpDao\Common;
 
 /**
-* Base Model
-*/
-
-class Base
+ * Base Model
+ */
+class Base extends Common
 {
-    public static $dbname = 'rbac';
+    const dbName = 'rbac';
 
-	public static $db = null;
+    public $fetchType = \PDO::FETCH_ASSOC;
 
-    protected static function getDb()
-    {
-        if (self::$db === null) {
-            self::$db = DB::pdo(self::$dbname);
-            self::$db->setDebug(false)->setFetchStyle(\PDO::FETCH_CLASS);
-        }
-		return self::$db;
-    }
-
+    public $debug = true;
 }
